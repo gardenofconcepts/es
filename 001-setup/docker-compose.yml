@@ -1,0 +1,23 @@
+---
+version: '3'
+services:
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.3.0
+    container_name: elasticsearch
+    environment:
+      - 'cluster.name=es-docker-cluster'
+      - 'node.name=master'
+      - 'bootstrap.memory_lock=true'
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      - '127.0.0.1:9200:9200'
+    networks:
+      - 'es'
+
+networks:
+  es: ~
