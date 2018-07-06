@@ -4,3 +4,5 @@
 /result.json
 /stack-docker
 /query.es
+*.log
+/filebeat*

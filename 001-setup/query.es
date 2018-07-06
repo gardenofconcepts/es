@@ -46,7 +46,7 @@ GET /products/laptops/1
 GET /products/laptops/2/_source
 {}
 
-GET /products/laptops/_search
+GET /_search
 {}
 
 GET /products/laptops/_search?q=Dell
